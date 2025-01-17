@@ -49,8 +49,8 @@ app.post('/create-checkout-session', async (req, res) => {
       payment_method_types: ['card'],
       line_items: line_items,
       mode: 'payment',
-      success_url: 'https://jjservice.github.io/L-Su-Ca/success.html', // Redirect to your desired success URL
-      cancel_url: 'https://jjservice.github.io/L-Su-Ca/cancel.html',  // Redirect to your desired cancel URL
+      success_url: 'https://jjservice.github.io/L-Su-Ca/successEtre.html', // Redirect to your desired success URL
+      cancel_url: 'https://jjservice.github.io/L-Su-Ca/cancelEtre.html',  // Redirect to your desired cancel URL
       shipping_address_collection: {
         allowed_countries: ['US', 'CA'], // Specify which countries are allowed for shipping
       },

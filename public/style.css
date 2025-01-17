@@ -75,38 +75,13 @@ h2{
   margin-bottom: 15px;
 }
 h3{
-  color: wheat;
-  text-shadow: 2px 2px 4px darkblue;
-  margin-bottom: 2px;
+  color: beige;
+  margin-bottom: 5px;
+  
  
 }
 
-.Buy-Now-Tag{
-  margin: 0% auto;
-  display: flex;
-  text-decoration: none;
-  justify-content: center;
-  text-align: center;
-  color: white;
-  text-shadow: 2px 2px 4px gold;
-  border: 2px solid blue;
-  background-color: rgba(0, 0, 0, 0.603);
-  box-shadow: 0px 2px 6px lightskyblue;
-  padding: 5px;
-  border-radius: 10px;
-}
-.Buy-Now-Tag:hover{
-  transform: scale(1.10);
-  transition: 0.5s;
-}
-body.lightStore .Buy-Now-Tag{
-  border-top: 2px solid yellowgreen;
-  border-bottom:2px solid yellowgreen;
-  border-left: 2px solid red;
-  border-right: 2px solid blue;
-  background-color: rgba(0, 0, 0, 0.603);
-  box-shadow: 0px 2px 6px yellowgreen;
-}
+
 
 
 .product-List{
@@ -119,9 +94,10 @@ body.lightStore .Buy-Now-Tag{
   .product-List .product{
     margin: 0% auto;
     padding: 10px;
+    font-family: Arial, sans-serif;
     margin: 10px auto;
     text-align: center;
-    background-color: rgba(0, 0, 0, 0.767);
+    background-color: rgba(0, 0, 0, 0.884);
     border: 1px solid gold;
     box-shadow: 0px 2px 10px black;
     border-radius: 15px;
@@ -134,8 +110,9 @@ body.lightStore .Buy-Now-Tag{
   border: 1px solid darkgray;
   padding: 2px;
   border-radius: 15px;
-  box-shadow: 0px 2px 8px white;
+  box-shadow: 0px 2px 8px rgba(255, 255, 255, 0.603);
   margin-bottom: 5px;
+  cursor: pointer;
 }
 .product input{
   margin: 0% auto;
@@ -143,19 +120,29 @@ body.lightStore .Buy-Now-Tag{
   align-items: center;
   width: 55px;
   border: none;
+  border: 1px solid rgba(255, 217, 0, 0.849);
   padding: 5px;
   border-radius: 6px;
+  font-family: sans-serif;
 }
 
 .size-tag{
-  color: yellow;
-  text-shadow: 1px 1px 2px black;
+  color: rgb(153, 133, 20);
+  text-shadow: 1px 1px 0px gold;
   font-family: Arial, sans-serif;
   font-size: 16px;
+  letter-spacing: 1px;
+  background-color: rgba(255, 255, 255, 0.151);
+  border-radius: 10px;
+  padding: 5px;
+  border-left: 2px solid rgb(155, 135, 25);
+  border-right: 2px solid rgb(155, 135, 25);
+
 }
 .Offer-Tag{
   margin: 0% auto;
   display: flex;
+  font-family: Arial, sans-serif;
   text-align: center;
   justify-content: center;
   align-items: center;
@@ -174,25 +161,11 @@ body.lightStore .Offer-Tag{
   box-shadow: 0px 2px 6px darkgreen;
   border-top: 2px solid yellowgreen;
 }
+#in-Stock{
+  color: white;
+  text-shadow: none;
+}
 
-
-body.lightPlayer #save-note{
-  border-bottom: 1px solid rgba(153, 205, 50, 0.87);
-  box-shadow: 0px 2px 5px black;
-}
-#start-button{
-    border: none;
-    border-radius: 5px;
-    padding: 10px;
-    color: white;
-    text-shadow: 2px 2px 2px darkblue;
-    background-color: rgba(139, 0, 97, 0.541);
-    border-top: 2px solid rgba(135, 206, 250, 0.877);
-    cursor: pointer;
-}
-body.lightPlayer #start-button{
-  border-top: 2px solid rgba(153, 205, 50, 0.781);
-}
 #language-selector{
     border: none;
     border-radius: 5px;
@@ -654,8 +627,8 @@ summary{
     text-align: center;
     justify-content: center;
     align-items: center;
-    color: white;
-    text-shadow: 0px 0px 3px gold;
+    color: rgb(180, 157, 26);
+    text-shadow: 0px 0px 1px black;
     position: fixed;
     display: flex;
     top: 10px;
@@ -725,11 +698,11 @@ cursor: grabbing;
   padding: 10px 10px;
   border-radius: 10px;
   background-color: green;
-  border: 1px solid lightskyblue;
+  border: 1px solid gold;
   color: white;
   text-shadow: 2px 2px 4px gold;
   cursor: pointer;
-  box-shadow: 0px 2px 6px darkgray;
+  box-shadow: 0px 2px 6px rgba(155, 141, 141, 0.616);
   opacity: 90%;
 }
 .buy-now:hover{
@@ -826,37 +799,6 @@ details{
   cursor: pointer;
 }
 
-
-h6{
-  position: absolute;
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  font-weight: bold;
-  font-size: 15px;
-  color: white;
-  text-shadow: 2px 2px 4px lightcoral;
-  background-color: rgba(0, 0, 139, 0.603);
-  box-shadow: 0px 3px 15px lightskyblue;
-  padding: 10px 5px;
-  border-radius: 12px;
-  
-}
-body.lightStore h6{
-  box-shadow: 0px 3px 10px black;
-  background-color: rgba(0, 100, 0, 0.664);
-}
-h6 ion-icon{
-  color: rgba(255, 217, 0, 0.596);
-  font-weight: bold;
-  border-bottom: 2px solid gold;
-  box-shadow: 0px 2px 10px #ff1060e8;
-  border-radius: 50px;
-  background-image: url(lollipop_3GIF.gif);
-  background-size: cover;
-  background-position: center;
-}
-body.lightStore h6 ion-icon{
-  box-shadow: 0px 0px 5px pink;
-}
 
 h4{
   margin: 0% auto;
@@ -965,7 +907,7 @@ body.lightStore .product{
   border: 2px solid rgba(255, 217, 0, 0.801);
   transform: rotate(calc(360deg/8 * var(--i)));
   transform-origin: 190px;
-  box-shadow: 0px 2px 20px blue;
+  box-shadow: 0px 3px 15px black;
 }
 body.light .img .imgBox{
   box-shadow: 0px 2px 15px #ff105e;
@@ -1150,23 +1092,6 @@ body.lightStore .image-container img{
 
 
 
-
-
-
-
-
-
-
- 
-
-
-
-
-
-
-
-
-
 label {
   margin: 0% auto;
   position: relative;
@@ -1177,9 +1102,9 @@ label {
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-weight: bold;
   color: white;
-  text-shadow: 2px 2px 4px lightcoral;
-  background-color: rgba(0, 0, 139, 0.603);
-  box-shadow: 0px 2px 12px lightskyblue;
+  text-shadow: 2px 2px 4px gold;
+  background-color: rgba(0, 0, 0, 0.877);
+  box-shadow: 0px 2px 12px gold;
   padding: 10px 20px;
   border-radius: 15px;
   
@@ -1279,64 +1204,6 @@ label {
     background-color: #ff9800; /* Warning color */
   }
 
-
-
-
-
-
-
-
-  .progress-container {
-    margin: 0% auto;
-    width: 80%;
-    margin-top: 5px;
-    position: relative;
-}
-
-  #progressBar {
-    width: 100%;
-    height: 15px;
-    -webkit-appearance: none;
-    appearance: none;
-    background: transparent;
-    border-radius: 10px;
-    outline: none;
-    transition: background 0.3s ease;
-    box-shadow: 0px 2px 6px rgba(135, 206, 250, 0.432);
-    margin-bottom: 10px;
-  
-}
-
-/* Style the thumb of the progress bar */
-#progressBar::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-    width: 10px;
-    height: 10px;
-    border-radius: 100%;
-    background: transparent;
-    border: 1px solid rgba(255, 217, 0, 0.856);
-    cursor: pointer;
-    transition: background 0.3s ease;
-    background-color: #3b83f667;
-}
-
-#progressBar::-moz-range-thumb {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background: #3b83f6cb;
-    cursor: pointer;
-}
-
-/* Change the progress bar appearance on hover */
-#progressBar:hover {
-    background: rgba(0, 0, 0, 0.932);
-}
-
-#progressBar:active {
-    background: rgba(0, 0, 0, 0.938);
-}
 
 
 
