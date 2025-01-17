@@ -497,13 +497,13 @@ transition: 0.5s;
   height: 400px;
   background-color: rgba(0, 0, 0, 0.918);
   border-radius: 10px;
-  box-shadow: 0px 2px 6px lightskyblue;
+  box-shadow: 0px 5px 20px black;
   padding: 10px;
   z-index: 100;
   color: white;
   display: inline;
   list-style-type: none;
-  border: 1px solid rgba(135, 206, 250, 0.842);
+  border: 1px solid rgba(255, 217, 0, 0.788);
   overflow-y: auto;
 }
 
