@@ -235,7 +235,8 @@
   <br>
 
 
-  
+     
+
       <div class="container">
         <label>Être Benoît</label> 
         <div class="Box">
@@ -250,7 +251,7 @@
                 </div>
   
                 <div class="imgBox" style="--i:3;">
-                    <a href="#"><img src="AirforceWhitePi3.png"></a>
+                    <a href="#"><img src="Rabanne-1-Million-Eau-de-Toilette-PIC1-main.jpg"></a>
                 </div>
   
                 <div class="imgBox" style="--i:4;">
@@ -272,19 +273,53 @@
   
             <div class="imgBox" style="--i:8;">
                 <a href="#"><img src="./products/louis-vuitton-nano-speedy-dating--M13226-pic2.avif"></a>
-            </div>
-  
-  
-               
+            </div>  
   
             </div>
         </div>
     </div>
+
+
+
+    <div class="Images-Body">
+      <img id="imageDisplay" src="Rabanne-1-Million-Eau-de-Toilette-PIC1-main.jpg" alt="">
+    </div>
+
+    <script>
+      // List of image URLs
+const images = [
+  './Rabanne-1-Million-Eau-de-Toilette-PIC1-main.jpg',
+  './A-Cosmos-Watch-with-Nebula-Hues-Casio-G-SHOCK-MTGB3000DN1A-1.jpg',
+  './AirforceWhitePi1.png', 
+  './louis-vuitton-nano-speedy-dating-M13226- 2460-pic1Main.jpg',
+  './Versace-Chain-Reaction-Sneaker-Multicolor-Size45-BNWB-1.webp',
+  './Versace-Safety-Pin-Ribbed-Knit-Mini-Dress- 1950-Main.jpg',
+  './products/V-Legend-Skeleton-Watch-$1317-pic1.avif'
+];
+
+let currentIndex = 0;
+
+// Function to change image
+function changeImage() {
+  // Select the image element
+  const imageElement = document.getElementById('imageDisplay');
+  
+  // Set the new image source
+  imageElement.src = images[currentIndex];
+  
+  // Update index for next image
+  currentIndex = (currentIndex + 1) % images.length; // Loops back to the first image after the last one
+}
+
+// Change image every 5 seconds (5000 milliseconds)
+setInterval(changeImage, 3000);
+
+    </script>
   
      <!---------- Blink Section-------------->
     <div class="image-container">
       <img src="./products/V-Legend-Skeleton-Watch-$1317-pic1.avif" class="blink-image" alt="Image 1">
-      <img src="AirforceWhitePi4.png" class="blink-image" alt="Image 2">
+      <img src="Rabanne-1-Million-Eau-de-Toilette-PIC1-main.jpg" class="blink-image" alt="Image 2">
       <img src="./products/Versace-Safety-Pin-Ribbed-Knit-Mini-Dress-$1950-pic1.avif" class="blink-image" alt="Image 3">
       <img src="./products/louis-vuitton-nano-speedy-dating--M13226-pic2.avif" class="blink-image" alt="Image 4">
       <img src="./A-Cosmos-Watch-with-Nebula-Hues-Casio-G-SHOCK-MTGB3000DN1A-1.jpg" class="blink-image" alt="Image 5">
@@ -300,10 +335,31 @@
 
     <div class="product">
 
+      <img src="Rabanne-1-Million-Eau-de-Toilette-PIC1-main.jpg" alt="Nike Air Force 1" 
+      onclick="openModal(
+        [
+          './Rabanne-1-Million-Eau-de-Toilette-PIC1-main.jpg',
+          './Rabanne-1-Million-Eau-de-Toilette-PIC1.webp', 
+          './Rabanne-1-Million-Eau-de-Toilette-PIC2.webp',
+          './Rabanne-1-Million-Eau-de-Toilette-PIC3.webp',
+          './Rabanne-1-Million-Eau-de-Toilette-PIC4.webp',
+          './Rabanne-1-Million-Eau-de-Toilette-PIC5.webp'
+        ])" style="background-color: white; padding: 5px; border: 2px solid rgba(0, 0, 0, 0.884);">
+
+      <h3>Rabanne - 1 Million Eau de Toilette</h3>
+      <p class="size-tag">Men Fragance!</p>
+      <p id="Price-tag">$119.99</p>
+      <input type="number" class="quantity-input" value="1" min="1" max="1" data-product-id="1">
+      <p id="in-Stock">In Stock: <span id="stock2">1</span></p>
+      <button class="buy-now" data-product-id="1" data-price="119.99" data-name="Rabanne - 1 Million Eau de Toilette">ADD TO CART</button>
+    </div>
+
+    <div class="product">
+
       <img src="louis-vuitton-nano-speedy-dating-M13226- 2460-pic1Main.jpg" alt="Nike Air Force 1" 
       onclick="openModal(
         [
-          './products/louis-vuitton-nano-speedy-dating-M13226-$2460-pic1.avif',
+          './louis-vuitton-nano-speedy-dating-M13226- 2460-pic1Main.jpg',
           './products/louis-vuitton-nano-speedy-dating--M13226-pic2.avif', 
           './products/louis-vuitton-nano-speedy-dating--M13226-pic3.avif',
           './products/louis-vuitton-nano-speedy-dating--M13226-pic4.avif'
@@ -312,9 +368,9 @@
       <h3>Louis Vuitton Nano - Speedy Dating</h3>
       <p class="size-tag">M13226</p>
       <p id="Price-tag">$2,499.99</p>
-      <input type="number" class="quantity-input" value="1" min="1" max="1" data-product-id="1">
+      <input type="number" class="quantity-input" value="1" min="1" max="1" data-product-id="2">
       <p id="in-Stock">In Stock: <span id="stock2">1</span></p>
-      <button class="buy-now" data-product-id="1" data-price="2499.99" data-name="Louis Vuitton Nano - Speedy Dating">ADD TO CART</button>
+      <button class="buy-now" data-product-id="2" data-price="2499.99" data-name="Louis Vuitton Nano - Speedy Dating">ADD TO CART</button>
     </div>
 
 
@@ -333,9 +389,9 @@
       <h3>Versace Safety - Pin Ribbed Knit</h3>
       <p class="size-tag">Mini-Dress</p>
       <p id="Price-tag">$1999.99</p>
-      <input type="number" class="quantity-input" value="1" min="1" max="1" data-product-id="2">
+      <input type="number" class="quantity-input" value="1" min="1" max="1" data-product-id="3">
       <p id="in-Stock">In Stock: <span id="stock2">1</span></p>
-      <button class="buy-now" data-product-id="2" data-price="1999.99" data-name="Versace Safety - Pin Ribbed Knit - Mini-Dress">ADD TO CART</button>
+      <button class="buy-now" data-product-id="3" data-price="1999.99" data-name="Versace Safety - Pin Ribbed Knit - Mini-Dress">ADD TO CART</button>
     </div>
     
 
@@ -344,9 +400,9 @@
       <h3>Nike Air Force 1 '07 - Men's Shoes - Sneakers</h3>
       <p class="size-tag">Size: M-6 / W-7.5</p>
       <p id="Price-tag">$99.99</p>
-      <input type="number" class="quantity-input" value="1" min="1" max="1" data-product-id="3">
+      <input type="number" class="quantity-input" value="1" min="1" max="1" data-product-id="4">
       <p id="in-Stock">In Stock: <span id="stock2">1</span></p>
-      <button class="buy-now" data-product-id="3" data-price="99.99" data-name="Nike Air Force 1 '07 - SMALL">ADD TO CART</button>
+      <button class="buy-now" data-product-id="4" data-price="99.99" data-name="Nike Air Force 1 '07 - SMALL">ADD TO CART</button>
     </div>
     
     <div class="product">
@@ -364,10 +420,10 @@
 
       <h3>Versace Legend Skeleton Watch</h3>
       <p class="size-tag">Exclusive Offer!</p>
-      <p id="Price-tag">$1,349.99</p>
-      <input type="number" class="quantity-input" value="1" min="1" max="1" data-product-id="4">
+      <p id="Price-tag">$1,199.99</p>
+      <input type="number" class="quantity-input" value="1" min="1" max="1" data-product-id="5">
       <p id="in-Stock">In Stock: <span id="stock2">1</span></p>
-      <button class="buy-now" data-product-id="4" data-price="1199.99" data-name="Versace-Chain-Reaction-Sneaker-Multicolor-Size45-BNWB">ADD TO CART</button>
+      <button class="buy-now" data-product-id="5" data-price="1199.99" data-name="Versace Legend Skeleton Watch">ADD TO CART</button>
     </div>
     
     <div class="product">
@@ -384,9 +440,9 @@
       <h3>Versace Chain Reaction-Sneaker</h3>
       <p class="size-tag">Multicolor BNWB-Size: 45</p>
       <p id="Price-tag">$1,199.99</p>
-      <input type="number" class="quantity-input" value="1" min="1" max="1" data-product-id="5">
+      <input type="number" class="quantity-input" value="1" min="1" max="1" data-product-id="6">
       <p id="in-Stock">In Stock: <span id="stock2">1</span></p>
-      <button class="buy-now" data-product-id="5" data-price="1199.99" data-name="Versace-Chain-Reaction-Sneaker-Multicolor-Size45-BNWB">ADD TO CART</button>
+      <button class="buy-now" data-product-id="6" data-price="1199.99" data-name="Versace Chain Reaction - Sneaker">ADD TO CART</button>
     </div>
 
 
@@ -405,11 +461,11 @@
         ])">
 
       <h3>A Cosmos Watch with Nebula Hues</h3>
-      <p class="size-tag"> Casio G-SHOCK-MTGB3000DN1A</p>
+      <p class="size-tag">Casio G-SHOCK MTGB3000DN1A</p>
       <p id="Price-tag">$1,250.00</p>
-      <input type="number" class="quantity-input" value="1" min="1" max="1" data-product-id="6">
+      <input type="number" class="quantity-input" value="1" min="1" max="1" data-product-id="7">
       <p id="in-Stock">In Stock: <span id="stock2">1</span></p>
-      <button class="buy-now" data-product-id="6" data-price="1249.99" data-name="A-Cosmos-Watch-with-Nebula-Hues-Casio-G-SHOCK-MTGB3000DN1A">ADD TO CART</button>
+      <button class="buy-now" data-product-id="7" data-price="1249.99" data-name="A Cosmos Watch with Nebula Hues - Casio G-SHOCK MTGB3000DN1A">ADD TO CART</button>
     </div>
     
     <!-- Add more products as needed -->
