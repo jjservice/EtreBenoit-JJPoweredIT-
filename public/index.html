@@ -168,6 +168,22 @@
     display: none;  /* Hide the search bar initially */
   }
 
+  #promoCode{
+    margin: 0% auto;
+    padding: 5px;
+    font-size: 12px;
+    display: flex;
+    margin-top: 10;
+    margin-bottom: 5px;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    width: 100px;
+    border: 2px solid gold;
+   
+    
+  }
+
     @media (min-width: 768px){
     .modal-content{
       padding-top: 60px;
@@ -204,6 +220,7 @@
       <div class="cart-container">
       <div id="cart-items"></div>
       <p id="cart-total" style="color: white;">Total: $0.00</p>
+      <input type="text" id="promoCode" placeholder="Promo Code">
     <button id="checkout-btn" style="display:none;">Proceed to Checkout</button>
   </div>
   </details>

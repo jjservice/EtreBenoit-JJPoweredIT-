@@ -1,24 +1,23 @@
 const express = require('express');
 const Stripe = require('stripe');
-require('dotenv').config(); // Load the environment variables from the .env file
+require('dotenv').config(); // Load environment variables from .env file
 
 const stripe = Stripe(process.env.STRIPE_SECRET_KEY); // Access Stripe key from .env
 const bodyParser = require('body-parser');
 const app = express();
-
-
 
 // Middleware to parse JSON bodies
 app.use(bodyParser.json());
 
 app.post('/create-checkout-session', async (req, res) => {
   try {
-    const { items } = req.body;
+    const { items, promoCode } = req.body; // Expecting promoCode from frontend if available
 
-    // Log received items for debugging
+    // Log received items and promoCode for debugging
     console.log('Received items:', items);
+    console.log('Promo Code:', promoCode);
 
-    // Create a map to accumulate quantities for each item, including images
+    // Create a map to accumulate quantities for each item
     const itemMap = items.reduce((acc, item) => {
       if (acc[item.name]) {
         acc[item.name].quantity += item.quantity; // Add to the existing quantity
@@ -28,9 +27,8 @@ app.post('/create-checkout-session', async (req, res) => {
       return acc;
     }, {});
 
-    // Convert the item map back to an array of line items, including images
+    // Convert the item map back to an array of line items
     const line_items = Object.values(itemMap).map(item => {
-      console.log('Line item:', item); // Debugging to check image
       return {
         price_data: {
           currency: 'usd',
@@ -44,7 +42,35 @@ app.post('/create-checkout-session', async (req, res) => {
       };
     });
 
-    // Create a checkout session with shipping address collection and billing address collection
+    // Calculate the total amount of the items in cents
+    const totalAmount = line_items.reduce((total, item) => total + (item.price_data.unit_amount * item.quantity), 0);
+
+    // Apply discount if promoCode is provided
+    let discount = 0;
+    if (promoCode) {
+      if (promoCode === 'DISCOUNT10') {
+        // Example: 10% discount
+        discount = Math.round(totalAmount * 0.10);
+      } else if (promoCode === 'FLAT5') {
+        // Example: $5 discount
+        discount = 500; // $5 = 500 cents
+      }
+    }
+
+    // Adjust the total price after the discount
+    const finalAmount = totalAmount - discount;
+
+    // Create a discount coupon if needed
+    let discountCoupon = null;
+    if (discount > 0) {
+      // If there's a discount, create a coupon in Stripe
+      discountCoupon = await stripe.coupons.create({
+        amount_off: discount,
+        currency: 'usd',
+      });
+    }
+
+    // Create a checkout session with the discounted total
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ['card'],
       line_items: line_items,
@@ -55,6 +81,9 @@ app.post('/create-checkout-session', async (req, res) => {
         allowed_countries: ['US', 'CA'], // Specify which countries are allowed for shipping
       },
       billing_address_collection: 'required', // Collect billing address
+      discounts: discountCoupon ? [{
+        coupon: discountCoupon.id, // Apply the created discount coupon
+      }] : [], // Only apply discount if there is one
     });
 
     // Send the session ID to the frontend
@@ -64,7 +93,6 @@ app.post('/create-checkout-session', async (req, res) => {
     res.status(500).send('Internal Server Error');
   }
 });
-
 
 // Serve static files (for success/cancel pages)
 app.use(express.static('public'));

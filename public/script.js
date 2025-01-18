@@ -192,25 +192,28 @@ document.getElementById('cart-items').addEventListener('click', (event) => {
 updateCart();
 
 
+const stripe = Stripe('pk_live_51QTSb2LPa32ZluPp1YadZwNsFhMmn4a5u1sYzy0bgbIL1yD1LFuGXQcn3CgEBAwaBucY7RK5GwT51oEo44hDNbvo001nhm4Exe');
 
 
-// Handle the 'Proceed to Checkout' button click
+// Handle 'Proceed to Checkout' button click
 document.getElementById('checkout-btn').addEventListener('click', async () => {
-  // Send request to the server to create the checkout session with the cart items
+  // Get the promo code entered by the user
+  const promoCode = document.getElementById('promoCode').value;
+
+  // Send request to the server to create the checkout session with the cart items and promo code
   const response = await fetch('/create-checkout-session', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ items: cart })
+    body: JSON.stringify({ items: cart, promoCode: promoCode }) // Include promoCode here
   });
 
+  // Parse the session ID from the response
   const session = await response.json();
 
-  // Redirect to Stripe Checkout
+  // Redirect to Stripe Checkout with the session ID
   const { error } = await stripe.redirectToCheckout({ sessionId: session.id });
+
   if (error) {
     console.error('Error:', error);
   }
 });
-
-
-const stripe = Stripe('pk_live_51QTSb2LPa32ZluPp1YadZwNsFhMmn4a5u1sYzy0bgbIL1yD1LFuGXQcn3CgEBAwaBucY7RK5GwT51oEo44hDNbvo001nhm4Exe');
