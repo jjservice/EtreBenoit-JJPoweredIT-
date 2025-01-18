@@ -55,6 +55,10 @@ function updateCart() {
   const checkoutBtn = document.getElementById('checkout-btn');
   checkoutBtn.style.display = cart.length > 0 ? 'inline-block' : 'none';
 
+   // Show or hide the checkout button based on cart contents
+   const promoInput = document.getElementById('promoCode');
+   promoInput.style.display = cart.length > 0 ? 'flex' : 'none';
+
   // Update the cart item count indicator
   document.getElementById('cart-item-count').textContent = totalItems;
 }
