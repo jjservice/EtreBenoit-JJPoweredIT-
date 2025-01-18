@@ -212,10 +212,10 @@
     <!-- The sidebar menu -->
     <div id="mySidebar" class="sidebar">
       <a href="javascript:void(0)" class="close-btn" onclick="closeNav()">&times;</a>
-      <a href="#">Home</a>
-      <a href="#">About</a>
-      <a href="#">Services</a>
-      <a href="#">Contact</a>
+      <a href="./men.html">Men</a>
+      <a href="./women.html">Women</a>
+      <a href="./kids.html">Kids</a>
+      <a href="#">Deals</a>
   </div>
 
   <!-- The button to open the sidebar -->
@@ -312,7 +312,7 @@
       <p id="Price-tag">$2,499.99</p>
       <input type="number" class="quantity-input" value="1" min="1" max="1" data-product-id="1">
       <p id="in-Stock">In Stock: <span id="stock2">1</span></p>
-      <button class="buy-now" data-product-id="1" data-price="2499.99" data-name="Microsoft Xbox - Series S 512GB">ADD TO CART</button>
+      <button class="buy-now" data-product-id="1" data-price="2499.99" data-name="Louis Vuitton Nano - Speedy Dating">ADD TO CART</button>
     </div>
 
 
@@ -422,7 +422,7 @@
   <!-- Modal Structure -->
   <div id="productModal" class="modal">
     <div class="modal-content">
-      <span class="close" onclick="closeModal()">&times;</span>
+      <span class="close" onclick="closeModal()" style="color: white; font-size: 25px; cursor: pointer;">&times;</span>
       <button class="prev" onclick="changeImage(-1)"  style="background-color: rgba(0, 0, 0, 0.877); border: none;">&#10094;</button>
       <img id="modalImage" src="" alt="Product Image">
       <button class="next" onclick="changeImage(1)" style="background-color: rgba(0, 0, 0, 0.877); border: none;">&#10095;</button>
@@ -465,30 +465,6 @@
     // Initial update on page load
     window.onload = updateButtonState;
   </script>
-  
-
-  <script>
-    //////Hide And Show Section //////////
-
-const myButton = document.getElementById("HideShow-Btn");
-        const myImg = document.getElementById("song-details");
-
-        myButton.addEventListener("click", event => {
-            if (myImg.style.display === "none") {
-                myImg.style.display = "block";
-                myButton.style.color = "red";
-                myButton.style.border = "1px solid red";
-                myButton.innerHTML = ' <i class="fas fa-times"></i> '; // Show music note
-            } else {
-                myImg.style.display = "none";
-                myButton.style.color = "yellow";
-                myButton.style.border = "none";
-                myButton.style.borderTop = "2px solid yellow";
-                myButton.innerHTML = '<i class="fas fa-music"></i>'; // Show "X" icon
-            }
-        });
-
-  </script>
 
   <!-- Fixed footer -->
   <footer class="footer">
@@ -513,10 +489,6 @@ const myButton = document.getElementById("HideShow-Btn");
         <input class="search-bar4" type="text" id="search-bar" placeholder=".;.Search.;." oninput="searchProducts()" style="display: none;">
         <button class="button4" id="Icon-Search-Footer" onclick="toggleSearchBar()"><i class="fas fa-search search-icon"></i></button>
       
-         
-        
-       
-        <a href="https://jjservice.github.io/L2/1.html" class="button4"><ion-icon name="home"></ion-icon></a>
         <a href="https://jjservice.github.io/L-Club-Store/About.html" class="button4"><ion-icon name="people"></ion-icon></a>
         <a href="https://jjservice.github.io/L-Club-Store/ContactForm.html" class="button4"><ion-icon name="mail"></ion-icon></a>
         <a href="https://jjservice.github.io/L-Club-Store/Faq.html" class="button4"><ion-icon name="help"></ion-icon></a>
@@ -563,7 +535,6 @@ const myButton = document.getElementById("HideShow-Btn");
 
   <script src="script.js"></script>
   <script src="Search.js"></script>
-   <script src="music.js"></script>
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
