@@ -42,33 +42,40 @@ app.post('/create-checkout-session', async (req, res) => {
       };
     });
 
-    // Calculate the total amount of the items in cents
-    const totalAmount = line_items.reduce((total, item) => total + (item.price_data.unit_amount * item.quantity), 0);
+  // Define the minimum amount required to use the promo code (in cents)
+const minAmountRequired = 100000; // = $500
 
-    // Apply discount if promoCode is provided
-    let discount = 0;
-    if (promoCode) {
-      if (promoCode === 'DISCOUNT10') {
-        // Example: 10% discount
-        discount = Math.round(totalAmount * 0.10);
-      } else if (promoCode === 'FLAT5') {
-        // Example: $5 discount
-        discount = 500; // $5 = 500 cents
-      }
+// Calculate the total amount of the items in cents
+const totalAmount = line_items.reduce((total, item) => total + (item.price_data.unit_amount * item.quantity), 0);
+
+// Apply discount if promoCode is provided and the total amount meets the minimum requirement
+let discount = 0;
+if (promoCode) {
+  if (totalAmount >= minAmountRequired) {  // Check if the total amount exceeds the minimum required
+    if (promoCode === 'DISCOUNT10') {
+      // Example: 10% discount
+      discount = Math.round(totalAmount * 0.10);
+    } else if (promoCode === 'FLAT5') {
+      // Example: $5 discount
+      discount = 5000; // = $5 
     }
+  } else {
+    console.log('Total amount is not sufficient to apply this promo code.');
+  }
+}
 
-    // Adjust the total price after the discount
-    const finalAmount = totalAmount - discount;
+// Adjust the total price after the discount
+const finalAmount = totalAmount - discount;
 
-    // Create a discount coupon if needed
-    let discountCoupon = null;
-    if (discount > 0) {
-      // If there's a discount, create a coupon in Stripe
-      discountCoupon = await stripe.coupons.create({
-        amount_off: discount,
-        currency: 'usd',
-      });
-    }
+// Create a discount coupon if needed
+let discountCoupon = null;
+if (discount > 0) {
+  // If there's a discount, create a coupon in Stripe
+  discountCoupon = await stripe.coupons.create({
+    amount_off: discount,
+    currency: 'usd',
+  });
+}
 
     // Create a checkout session with the discounted total
     const session = await stripe.checkout.sessions.create({
