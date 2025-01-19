@@ -42,8 +42,11 @@ app.post('/create-checkout-session', async (req, res) => {
       };
     });
 
-  // Define the minimum amount required to use the promo code (in cents)
-const minAmountRequired = 100000; // = $500
+
+
+  
+const minAmountRequired = 100000; // = $1000
+const flat5MinAmountRequired = 50000; // = $500 Flat
 
 // Calculate the total amount of the items in cents
 const totalAmount = line_items.reduce((total, item) => total + (item.price_data.unit_amount * item.quantity), 0);
@@ -51,18 +54,26 @@ const totalAmount = line_items.reduce((total, item) => total + (item.price_data.
 // Apply discount if promoCode is provided and the total amount meets the minimum requirement
 let discount = 0;
 if (promoCode) {
-  if (totalAmount >= minAmountRequired) {  // Check if the total amount exceeds the minimum required
-    if (promoCode === 'DISCOUNT10') {
-      // Example: 10% discount
-      discount = Math.round(totalAmount * 0.10);
-    } else if (promoCode === 'FLAT5') {
-      // Example: $5 discount
-      discount = 5000; // = $5 
+  if (promoCode === 'DISCOUNT10') {
+    if (totalAmount >= minAmountRequired) {  // Check if the total amount exceeds the minimum required for DISCOUNT10
+      //  5% discount
+      discount = Math.round(totalAmount * 0.05);
+    } else {
+      console.log('Total amount is not sufficient to apply DISCOUNT10 promo code.');
     }
-  } else {
-    console.log('Total amount is not sufficient to apply this promo code.');
+  } else if (promoCode === 'FLAT5') {
+    if (totalAmount >= flat5MinAmountRequired) {  // Check if the total amount exceeds the minimum required for FLAT5
+      // $5 discount
+      discount = 500; // = $5
+    } else {
+      console.log('Total amount is not sufficient to apply FLAT5 promo code.');
+    }
   }
-}
+} 
+
+// Log the discount applied
+console.log('Discount applied:', discount);
+
 
 // Adjust the total price after the discount
 const finalAmount = totalAmount - discount;
