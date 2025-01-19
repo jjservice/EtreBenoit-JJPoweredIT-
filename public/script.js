@@ -76,18 +76,20 @@ function updateItemQuantity(productId, newQuantity) {
 
 // Function to show a message when an item is added
 function showAddToCartMessage(item) {
-  // Play a notification sound
-  const notificationSound = new Audio('./Flight-Sound.mp3'); // Provide the correct path to your sound file
 
-  // Handle potential errors for the sound file
-  notificationSound.onerror = function() {
-    console.error('Error loading the sound file.');
-  };
+      // Play a notification sound
+      const notificationSound = new Audio('./Flight-Sound.mp3'); // Provide the correct path to your sound file
 
-  // Ensure the sound plays after the user interaction
-  notificationSound.play().catch(function(error) {
-    console.error('Audio play failed:', error);
-  });
+      // Handle potential errors for the sound file
+      notificationSound.onerror = function() {
+        console.error('Error loading the sound file.');
+      };
+    
+      // Ensure the sound plays after the user interaction
+      notificationSound.play().catch(function(error) {
+        console.error('Audio play failed:', error);
+      });
+    
 
   // Get the notification and the message element
   const notification = document.getElementById('custom-notification');
@@ -99,7 +101,7 @@ function showAddToCartMessage(item) {
   // Show the notification by adding the 'show' class
   notification.classList.add('show');
 
-  // Hide the notification after 3 seconds
+  // Hide the notification after 5 seconds
   setTimeout(function() {
     notification.classList.remove('show');
   }, 5000);
@@ -169,19 +171,6 @@ document.getElementById('cart-items').addEventListener('click', (event) => {
   if (event.target.classList.contains('remove-item')) {
     const productId = event.target.getAttribute('data-product-id');
 
-     // Remove item from cart
-     const notificationSound = new Audio('./DownCart-Sound2.mp3'); // Provide the correct path to your sound file
-
-     // Handle potential errors for the sound file
-     notificationSound.onerror = function() {
-       console.error('Error loading the sound file.');
-     };
-   
-     // Ensure the sound plays after the user interaction
-     notificationSound.play().catch(function(error) {
-       console.error('Audio play failed:', error);
-     });
-  
     cart = cart.filter(item => item.id !== productId);
 
     // Save the updated cart to localStorage
