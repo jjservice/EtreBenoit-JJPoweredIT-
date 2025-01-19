@@ -142,13 +142,23 @@
 
   ////sideBar///////
 
+    const sideBar = document.querySelector(".open-btn-sidebar");
+    const bodysideBar = document.querySelector(".sidebar");
 
       // Open the sidebar
       function openNav() {
         document.getElementById("mySidebar").classList.add("open");
+        sideBar.style.color = "gold";
+        sideBar.style.borderRadius = "10px"; 
+        
+        bodysideBar.style.borderLeft = "2px solid gold";
+        
     }
 
     // Close the sidebar
     function closeNav() {
         document.getElementById("mySidebar").classList.remove("open");
-    }
+        sideBar.style.color = "white";
+        sideBar.style.textShadow = "1px 1px 4px gold";
+        bodysideBar.style.borderLeft = "none";
+      }

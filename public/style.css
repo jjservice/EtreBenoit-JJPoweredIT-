@@ -202,11 +202,23 @@ body.lightPlayer #language-selector option{
     overflow-x: hidden;
     transition: 0.3s;
     padding-top: 60px;
+    box-shadow: 0px 2px 25px black;
     z-index: 1000;
+    
 }
+.open-btn-sidebar i{
+  border-left: 2px solid rgba(255, 217, 0, 0.678);
+  height: 50px;
+  width: 10px;
+  padding: 10px 10px;
+  border-radius: 10px;
+}
+
+
 
 /* Sidebar links */
 .sidebar a {
+  margin: 0% auto;
     padding: 10px 15px;
     text-decoration: none;
     font-size: 25px;
@@ -218,13 +230,18 @@ body.lightPlayer #language-selector option{
 
 .sidebar a:hover {
     color: #f1f1f1;
+    width: 95%;
+    background-color: rgba(255, 255, 255, 0.103);
+    border-radius: 10px;
+    transition: 0.5s ease-in-out;
+    text-decoration: underline;
 }
 
 /* The menu button */
 .open-btn-sidebar {
     font-size: 30px;
     position: absolute;
-    top: 10px;
+    top: 3px;
     right: 10px;
     z-index: 1001;
     background-color: transparent;
