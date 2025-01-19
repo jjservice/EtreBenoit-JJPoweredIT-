@@ -1267,10 +1267,9 @@ label {
   .Marketing-One-Title{
   font-size: 30px;
   color: rgb(46, 42, 42);
-  text-align: left;
+  text-align: center;
   margin-left: 10px;
   text-shadow: 0px 0px 2px black; 
- 
   }
   .image-One{
     margin: 0% auto;
@@ -1283,17 +1282,18 @@ label {
     list-style-type: none;
     outline: none;
     overflow: auto;
-    padding: 0px 10px;
+    padding: 5px 10px;
+    background-color: rgba(0, 0, 0, 0.884);
   }
   .image-One video{
       margin: 0% auto;
       width: 100%;
-      height: auto;
+      height: 300px auto;
       border-radius: 10px;
       border: none;
       border: 1px solid black;
       box-shadow: 0px 2px 6px rgb(82, 80, 80);
-      background-color: rgba(255, 217, 0, 0.596);
+      background-color: transparent;
       padding: 1px;
     
   }
@@ -1305,6 +1305,7 @@ label {
     border-top: 2px solid gray;
     border-bottom: 2px solid gray;
     box-shadow: 0px 2px 6px black;
+    background-color: rgba(0, 0, 0, 0.904);
   }
   .Design-Two-Title{
     margin: 0% auto;
@@ -1312,11 +1313,12 @@ label {
     justify-content: center;
     align-content: center;
     font-size: 30px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
     top: 40%;
     width: 80%;
     color: white;
-    text-shadow: 2px 2px 4px gold;
-    background-color: rgba(0, 0, 0, 0.836);
+    text-shadow: 1px 1px 3px gold;
+    background-color: rgba(0, 0, 0, 0.904);
     border-radius: 100%;
     border: 2px solid gray;
     box-shadow: 0px 2px 8px black;
