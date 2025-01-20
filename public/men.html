@@ -168,6 +168,23 @@
     display: none;  /* Hide the search bar initially */
   }
 
+  .Women-Design{
+    margin: 0% auto;
+    flex-direction: column;
+    box-sizing: border-box;
+    width: 100%;
+    margin-top: 15px;
+    border: none;
+  }
+  .Women-Design video{
+    margin: 0% auto;
+    width: 100%;
+    height: auto;
+    margin-bottom: -10px;
+    box-shadow: 0px 2px 15px whitesmoke;
+    
+  }
+
     @media (min-width: 768px){
     .modal-content{
       padding-top: 60px;
@@ -217,49 +234,15 @@
     <span id="notification-message"></span>
   </div>
 
+  <div class="Women-Design">
+    <video autoplay loop muted playsinline>
+      <source src="./products/Prada-FashinShow-Video.mp4" type="video/mp4">
+    </video>
+  </div>
+
+
   <!-- Product List -->
-  <ul class="product-List">
-
-    <div class="product">
-
-      <img src="./products/louis-vuitton-nano-speedy-dating-M13226-$2460-pic1.avif" alt="Nike Air Force 1" 
-      onclick="openModal(
-        [
-          './products/louis-vuitton-nano-speedy-dating-M13226-$2460-pic1.avif',
-          './products/louis-vuitton-nano-speedy-dating--M13226-pic2.avif', 
-          './products/louis-vuitton-nano-speedy-dating--M13226-pic3.avif',
-          './products/louis-vuitton-nano-speedy-dating--M13226-pic4.avif'
-        ])" style="background-color: white; padding: 5px; border: 2px solid rgba(0, 0, 0, 0.884);">
-
-      <h3>Louis Vuitton Nano - Speedy Dating</h3>
-      <p class="size-tag">M13226</p>
-      <p id="Price-tag">$2,499.99</p>
-      <input type="number" class="quantity-input" value="1" min="1" max="1" data-product-id="1">
-      <p id="in-Stock">In Stock: <span id="stock2">1</span></p>
-      <button class="buy-now" data-product-id="1" data-price="2499.99" data-name="Louis Vuitton Nano - Speedy Dating">ADD TO CART</button>
-    </div>
-
-
-    <div class="product">
-
-      <img src="./products/Versace-Safety-Pin-Ribbed-Knit-Mini-Dress-$1950-pic1.avif" alt="Nike Air Force 1" 
-      onclick="openModal(
-        [
-          './products/Versace-Safety-Pin-Ribbed-Knit-Mini-Dress-$1950-pic1.avif', 
-          './products/Versace-Safety-Pin-Ribbed-Knit-Mini-Dress-$1950-pic2.avif',
-          './products/Versace-Safety-Pin-Ribbed-Knit-Mini-Dress-$1950-pic3.avif', 
-          './products/Versace-Safety-Pin-Ribbed-Knit-Mini-Dress-$1950-pic4.avif'
-          
-        ])">
-
-      <h3>Versace Safety - Pin Ribbed Knit</h3>
-      <p class="size-tag">Mini-Dress</p>
-      <p id="Price-tag">$1999.99</p>
-      <input type="number" class="quantity-input" value="1" min="1" max="1" data-product-id="2">
-      <p id="in-Stock">In Stock: <span id="stock2">1</span></p>
-      <button class="buy-now" data-product-id="2" data-price="1999.99" data-name="Versace Safety - Pin Ribbed Knit - Mini-Dress">ADD TO CART</button>
-    </div>
-    
+  <ul class="product-List" style="margin-bottom: 50px;">
 
     <div class="product">
       <img src="NikeAirForce1'07-mainPic.png" alt="Nike Air Force 1" onclick="openModal(['AirforceWhitePi1.png', 'AirforceWhitePi3.png', 'AirforceWhitePi4.png'])">
@@ -336,11 +319,7 @@
     
     <!-- Add more products as needed -->
   </ul>
-
-
-     
-
-
+ 
 
 
   <!-- Modal Structure -->

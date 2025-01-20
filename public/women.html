@@ -168,6 +168,23 @@
     display: none;  /* Hide the search bar initially */
   }
 
+  .Women-Design{
+    margin: 0% auto;
+    flex-direction: column;
+    box-sizing: border-box;
+    width: 100%;
+    margin-top: 15px;
+    border: none;
+  }
+  .Women-Design video{
+    margin: 0% auto;
+    width: 100%;
+    height: auto;
+    margin-bottom: -10px;
+    box-shadow: 0px 2px 15px whitesmoke;
+    
+  }
+
     @media (min-width: 768px){
     .modal-content{
       padding-top: 60px;
@@ -209,16 +226,20 @@
     <button id="checkout-btn" style="display:none;">Proceed to Checkout</button>
   </div>
   </details>
-
-
   
    <!-- Custom Notification Box -->
    <div id="custom-notification" class="notification">
     <span id="notification-message"></span>
   </div>
 
+  <div class="Women-Design">
+    <video autoplay loop muted playsinline>
+      <source src="./products/ZaraModel-Video.mp4" type="video/mp4">
+    </video>
+  </div>
+
   <!-- Product List -->
-  <ul class="product-List">
+  <ul class="product-List" style="margin-bottom: 50px;">
 
     <div class="product">
 
@@ -336,10 +357,6 @@
     
     <!-- Add more products as needed -->
   </ul>
-
-
-     
-
 
 
 
