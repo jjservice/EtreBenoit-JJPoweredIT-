@@ -141,16 +141,14 @@ h3{
   margin: 0% auto;
   color: wheat;
   text-shadow: 1px 1px 2px black;
-  background-color: rgba(245, 245, 245, 0.13);
-  box-shadow: 0px 2px 6px black;
+
   font-family: Arial, sans-serif;
   font-size: 16px;
   padding: 5px 10px;
-  
   margin-top: 10px;
   margin-bottom: 15px;
   border-radius: 10px;
-  width: 60%;
+  width: 65%;
   opacity: 80%;
 }
 #Price-tag{
